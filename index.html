@@ -5,28 +5,73 @@
   <meta charset="UTF-8">
   <meta name="viewport"
         content="width=device-width, initial-scale=1">
-  <title>Moakanja</title>
+  <title>Moakanja V2</title>
+
   <style>
     body {
       background: #101827;
       color: white;
+      font-family: Arial, sans-serif;
       text-align: center;
-      font-family: sans-serif;
-      padding: 50px 15px;
+      padding: 40px 15px;
     }
+
+    .card {
+      background: #1e293b;
+      padding: 30px;
+      border-radius: 16px;
+      max-width: 400px;
+      margin: 30px auto;
+    }
+
+    #count {
+      font-size: 60px;
+      color: #4ade80;
+    }
+
     button {
       background: #22c55e;
-      padding: 15px 25px;
+      color: white;
       border: none;
+      padding: 15px;
       border-radius: 10px;
+      cursor: pointer;
+      margin: 5px;
     }
   </style>
 </head>
+
 <body>
-  <h1>Welcome to Moakanja</h1>
-  <p>เว็บไซต์แรกของฉันบน GitHub</p>
-  <button onclick="alert('สำเร็จแล้ว!')">
-    ทดลองกด
-  </button>
+  <h1>Moakanja V2</h1>
+  <p>เรียนรู้ JavaScript บน GitHub</p>
+
+  <div class="card">
+    <h2>จำนวนครั้งที่กดปุ่ม</h2>
+    <p id="count">0</p>
+
+    <button onclick="increase()">
+      เพิ่มจำนวน
+    </button>
+
+    <button onclick="resetCount()">
+      รีเซ็ต
+    </button>
+  </div>
+
+  <script>
+    let count = 0;
+
+    function increase() {
+      count = count + 1;
+      document.getElementById("count")
+        .textContent = count;
+    }
+
+    function resetCount() {
+      count = 0;
+      document.getElementById("count")
+        .textContent = count;
+    }
+  </script>
 </body>
 </html>
